@@ -4,6 +4,7 @@ import { Container, createStyles, makeStyles, Theme } from '@material-ui/core';
 
 import { Footer } from './components/templates/Footer';
 import { Header } from './components/templates/Header';
+import { Login } from './components/pages/Login';
 import { MessageRoom } from './components/pages/MessageRoom';
 import { Users } from './components/pages/Users';
 
@@ -18,6 +19,7 @@ export const Router = () => {
           <Route path='/' exact children={<MessageRoom />} />
           <Route path='/messages' children={<MessageRoom />} />
           <Route path='/users' children={<Users />} />
+          <Route path='/login' children={<Login />} />
         </Switch>
         <Footer />
       </Container>
