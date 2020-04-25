@@ -9,7 +9,7 @@ import { MessageRoom } from './components/pages/MessageRoom';
 import { Users } from './components/pages/Users';
 import { UserSession } from './types/context';
 
-const init = { uid: '', name: '', imageUrl: '' }
+export const init = { uid: '', name: '', userImage: '' }
 
 export const UserSessionContext = createContext<UserSession>({ userSession: init, setUserSession: () => {} })
 

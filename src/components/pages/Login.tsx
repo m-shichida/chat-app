@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Paper, createStyles, Theme, makeStyles } from '@material-ui/core';
+import { Paper, createStyles, makeStyles } from '@material-ui/core';
 
 import { AnonymousLoginButton } from '../atoms/AnonymousLoginButton';
 import { GoogleLoginButton } from '../atoms/GoogleLoginButton';

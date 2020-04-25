@@ -1,17 +1,22 @@
 import React from 'react';
-import { Grid, Avatar, createStyles, Theme, makeStyles } from '@material-ui/core';
+import { Grid, Avatar, createStyles, makeStyles } from '@material-ui/core';
 
-export const UserIcon = () => {
+interface Props {
+  userImage?: string;
+}
+
+export const UserIcon = (props: Props) => {
   const classes = useStyles();
+  const { userImage } = props;
 
   return (
     <Grid item className={classes.root}>
-      <Avatar />
+      <Avatar src={userImage} />
     </Grid>
   )
 };
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       padding: '8px'

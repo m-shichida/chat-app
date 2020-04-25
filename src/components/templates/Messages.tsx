@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styled from 'styled-components';
 
-import { OtherMessage } from '../molecules/OtherMessage';
-import { MyMessage } from '../molecules/MyMessage';
+import { firebaseDb } from '../../firebase/config';
 import { Message } from '../../types/message';
+import { OtherMessage } from '../../components/molecules/OtherMessage'
+import { MyMessage } from '../../components/molecules/MyMessage'
+import { UserSessionContext } from '../../Router';
 
-interface Props {
-  messages: Message[];
-}
-
-export const Messages = (props: Props) => {
-  const { messages } = props;
+export const Messages = () => {
+  const { userSession } = useContext(UserSessionContext);
+  const [messages, setMessages] = useState<Message[]>([]);
+  useEffect(() => {
+    firebaseDb.ref('/messages').on('child_added', (data) => {
+      setMessages(prevState => [...prevState, data.val()]);
+    });
+  }, []);
 
   return (
     <SCContainer>
-      <OtherMessage />
-      <MyMessage />
+      {
+        messages.length ? (
+          messages.map((message, k) => message.uid === userSession.uid ? <MyMessage key={k} message={message} /> : <OtherMessage key={k} message={message} />)
+        ) : (
+          <></>
+        )
+      }
     </SCContainer>
   )
 };

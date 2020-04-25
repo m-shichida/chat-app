@@ -1,24 +1,24 @@
 import React from 'react';
-import { Grid, Paper, createStyles, Theme, makeStyles } from '@material-ui/core';
+import { Grid, Paper, createStyles, makeStyles } from '@material-ui/core';
 
 interface Props {
   content: string;
 }
 
-export const MessageContent = () => {
-  // const { content } = props;
+export const MessageContent = (props: Props) => {
+  const { content } = props;
   const classes = useStyles();
 
   return (
     <Grid item>
       <Paper className={classes.paper}>
-        aaaaa
+        { content }
       </Paper>
     </Grid>
   )
 };
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     paper: {
       padding: '0 8px',

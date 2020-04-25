@@ -1,6 +1,6 @@
 export interface Message {
-  uid: number;
-  userImage: string;
+  uid: string;
+  userImage?: string;
   content: string;
-  createdAt: string;
+  createdAt?: string;
 }

@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 interface UserInfo {
   uid: string;
   name: string;
-  imageUrl?: string;
+  userImage?: string;
 }
 
 export interface UserSession {

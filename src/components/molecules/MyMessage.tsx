@@ -4,12 +4,19 @@ import { Grid } from '@material-ui/core';
 
 import { UserIcon } from '../atoms/UserIcon';
 import { MessageContent } from '../atoms/MessageContent';
+import { Message } from '../../types/message';
 
-export const MyMessage = () => {
+interface Props {
+  message: Message;
+}
+
+export const MyMessage = (props: Props) => {
+  const { message } = props;
+
   return (
     <SCContainer>
-      <MessageContent />
-      <UserIcon />
+      <MessageContent content={message.content} />
+      <UserIcon userImage={message.userImage} />
     </SCContainer>
   )
 };
