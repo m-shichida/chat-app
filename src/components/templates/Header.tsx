@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Typography, createStyles, makeStyles, Theme } from '@material-ui/core';
+import { AppBar, Typography, createStyles, makeStyles } from '@material-ui/core';
 
 export const Header = () => {
   const classes = useStyles();
@@ -13,7 +13,7 @@ export const Header = () => {
   )
 };
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     title: {
       padding: '8px',

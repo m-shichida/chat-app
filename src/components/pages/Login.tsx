@@ -18,7 +18,7 @@ export const Login = () => {
   )
 };
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       width: '200px',
